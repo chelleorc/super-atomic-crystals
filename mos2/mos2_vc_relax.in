@@ -1,0 +1,48 @@
+
+ &CONTROL 
+  calculation= 'vc-relax', 
+  prefix= 'MoS2', 
+  outdir= './out' 
+  pseudo_dir = './pseudo'
+  etot_conv_thr= 1e-6, 
+  forc_conv_thr= 1e-5
+/
+
+&SYSTEM 
+  ibrav=  4, 
+  celldm(1) = 6.02882349219
+  celldm(3) = 4.66380258256
+  nat=  6,
+  ntyp= 2,
+  ecutwfc = 30.0, 
+  ecutrho= 120.0,  
+/
+
+&ELECTRONS
+  mixing_mode = 'plain'
+  mixing_beta = 0.7
+  conv_thr= 1e-8
+/
+
+&IONS 
+/
+
+&CELL 
+  cell_dofree= 'ibrav'
+/
+
+ATOMIC_SPECIES
+  Mo 95.96 Mo.pbe-spn-kjpaw_psl.1.0.0.UPF
+  S 32.065 S.pbe-nl-kjpaw_psl.1.0.0.UPF
+
+ATOMIC_POSITIONS crystal
+Mo           0.3333333300       0.6666666700       0.2500000000 
+Mo           0.6666666700       0.3333333300       0.7500000000 
+S            0.3333333300       0.6666666700       0.8551740000 
+S            0.6666666700       0.3333333300       0.1448260000 
+S            0.6666666600       0.3333333300       0.3551740000 
+S            0.3333333400       0.6666666700       0.6448260000 
+
+K_POINTS (automatic)
+  12 12 2 0 0 0 
+

@@ -1,0 +1,45 @@
+&control
+  calculation = 'nscf'
+  prefix = 'MoS2'
+  pseudo_dir = './pseudo'
+  outdir= './out'
+  verbosity = 'high'
+
+  wf_collect = .true.
+  forc_conv_thr = 0.01e-3
+  etot_conv_thr = 1.0e-6
+/
+
+&system
+  ibrav = 4
+  celldm(1) = 6.02882349219
+  celldm(3) = 4.66380258256
+  nat = 6
+  ntyp = 2
+  ecutwfc = 30.0
+  ecutrho = 120.0
+  nbnd = 16
+  occupations = 'smearing'
+  degauss = 0.005
+/
+
+&electrons
+  mixing_mode = 'plain'
+  mixing_beta = 0.7
+  conv_thr = 1.0e-6
+  electrons_maxstep = 100
+/
+
+ATOMIC_SPECIES
+  Mo 95.96 Mo.pbe-spn-kjpaw_psl.1.0.0.UPF
+  S 32.065 S.pbe-nl-kjpaw_psl.1.0.0.UPF
+
+ATOMIC_POSITIONS (crystal)
+Mo            0.3333333300        0.6666666700        0.2500000000
+Mo            0.6666666700        0.3333333300        0.7500000000
+S             0.3333333300        0.6666666700        0.8755855419
+S             0.6666666700        0.3333333300        0.1244144581
+S             0.6666666600        0.3333333300        0.3755855419
+S             0.3333333400        0.6666666700        0.6244144581
+K_POINTS {automatic}
+12 12 12 0 0 0

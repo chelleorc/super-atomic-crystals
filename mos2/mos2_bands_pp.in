@@ -1,0 +1,6 @@
+&bands
+    outdir = './out'
+    prefix = 'MoS2'
+    filband = 'MoS2_bands.dat'
+    lsym = .true.
+/

@@ -1,0 +1,43 @@
+&control
+  calculation = 'bands'
+  restart_mode= 'from_scratch',
+  prefix = 'MoS2'
+  pseudo_dir = './pseudo'
+  outdir= './out'
+/
+
+&system
+  ibrav = 4
+  celldm(1) = 3.16
+  celldm(3) = 3.8905
+  nat = 6
+  ntyp = 2
+  ecutwfc = 30
+  ecutrho = 120
+  nbnd = 16
+/
+
+&electrons
+  mixing_mode = 'plain'
+  mixing_beta = 0.7
+  conv_thr = 1.0e-6
+/
+
+ATOMIC_SPECIES
+  Mo 95.96 Mo.pbe-spn-kjpaw_psl.1.0.0.UPF
+  S 32.065 S.pbe-nl-kjpaw_psl.1.0.0.UPF
+
+ATOMIC_POSITIONS crystal
+Mo            0.3333333300        0.6666666700        0.2500000000
+Mo            0.6666666700        0.3333333300        0.7500000000
+S             0.3333333300        0.6666666700        0.9214540469
+S             0.6666666700        0.3333333300        0.0785459531
+S             0.6666666600        0.3333333300        0.4214540469
+S             0.3333333400        0.6666666700        0.5785459531
+
+K_POINTS {crystal_b}
+4
+      0.0000000000       0.0000000000       0.0000000000 10 !G
+      0.5000000000       0.0000000000       0.0000000000 10 !M
+      0.6666666666       0.3333333333       0.0000000000 10 !K
+      0.0000000000       0.0000000000       0.0000000000 10 !G
